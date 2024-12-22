@@ -103,8 +103,28 @@ footer p{
     width: 5rem;
 }
 
-#socials h3:hover {
+#twitch:hover {
     box-shadow: 10px 10px 10px #6a1b9a;
+}
+
+#youtube:hover {
+    box-shadow: 10px 10px 10px #f50202;
+}
+
+#tiktok:hover  {
+    box-shadow: 10px 10px 10px #e3dcdc;
+}
+
+#discord:hover  {
+    box-shadow: 10px 10px 10px #0215f5;
+}
+
+#threads:hover  {
+    box-shadow: 10px 10px 10px #545359;
+}
+
+#instagram:hover  {
+    box-shadow: 10px 10px 10px #ef7c0c;
 }
 
 #socials h3 a {
