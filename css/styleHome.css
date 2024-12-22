@@ -106,8 +106,13 @@ footer p{
     align-items: center;
 }
 
-#socials h3 {
-    padding: 10px 50px;
+#socials a h3{
+    margin: 0;
+}
+
+#socials a {
+    margin: 10px;
+    padding: 5px 20px;
     border: solid 2px #6a1b9a;
     background-color: #ffff;
     width: 5rem;
@@ -141,12 +146,12 @@ footer p{
     box-shadow: 10px 10px 10px #ef7c0c;
 }
 
-#socials h3 a {
+#socials a {
     text-decoration: none;
     color: #6a1b9a;
 }
 
-#socials h3 a:visited {
+#socials a:visited {
     color: #6a1b9a;
 }
 
