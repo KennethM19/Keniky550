@@ -129,6 +129,10 @@ footer p{
     box-shadow: 10px 10px 10px #0215f5;
 }
 
+#twitter:hover {
+    box-shadow: 10px 10px 10px #000000;
+}
+
 #threads:hover  {
     box-shadow: 10px 10px 10px #545359;
 }
