@@ -90,6 +90,16 @@ footer p{
     padding: 20px;
 }
 
+.working {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.working * {
+    padding: 0 10px;
+}
+
 #socials {
     display: flex;
     flex-direction: column;
@@ -134,4 +144,10 @@ footer p{
 
 #socials h3 a:visited {
     color: #6a1b9a;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
