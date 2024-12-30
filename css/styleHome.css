@@ -5,12 +5,20 @@ body {
     color: #ffffff;
     margin: 0;
     padding: 0;
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto auto 1fr auto;
+    overflow-x: hidden;
 }
 
 header {
     text-align: center;
     padding: 20px;
-    background: linear-gradient(45deg, #6a1b9a, #c158dc);
+    background: rgba(52, 3, 89, 0.66);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
 }
 
 nav ul {
@@ -32,18 +40,9 @@ nav ul li a {
     font-weight: bold;
 }
 
-section {
-    padding: 20px;
+section, footer p {
     text-align: center;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    margin: 10px 0;
+    padding: 10px 20px;
 }
 
 button {
@@ -61,6 +60,7 @@ button:hover {
 form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 form div {
@@ -77,17 +77,83 @@ form div textarea {
 
 form button {
     margin: 10px 20px;
-    align-self: center;
 }
 
-footer p{
-    margin: 0;
-    padding: 10px;
-    background-color: #000000;
+.icon {
+    display: flex;
 }
 
-.card {
+div#carousel {
+    grid-row: 1/2;
+    grid-column: 1/8;
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    --items: 5;
+    --middle: 3;
+    --position: 1;
+}
+
+div.carousel-item {
     padding: 20px;
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: rgba(52, 3, 89, 0.66);
+    position: absolute;
+    width: auto;
+    height: auto;
+    --r: calc(var(--position) - var(--offset));
+    --abs: max(calc(var(--r) * -1), var(--r));
+    transition: all 0.25s linear;
+    transform: rotateY(calc(-10deg * var(--r)))
+    translateX(calc(-300px * var(--r)));
+    z-index: calc(var(--items) - var(--abs));
+}
+
+div.carousel-item img {
+    cursor: pointer;
+}
+
+div.carousel-item:nth-of-type(1) {
+    --offset: 1;
+}
+
+div.carousel-item:nth-of-type(2) {
+    --offset: 2;
+}
+
+div.carousel-item:nth-of-type(3) {
+    --offset: 3;
+}
+
+div.carousel-item:nth-of-type(4) {
+    --offset: 4;
+}
+
+div.carousel-item:nth-of-type(5) {
+    --offset: 5;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.fade:not(.show) {
+    opacity: 100%;
+}
+
+.fade {
+    position: absolute;
+    background: linear-gradient(90deg, #1e293b, transparent 30%, transparent 70%, #1e293b);
+    inset: 0;
+    pointer-events: none;
 }
 
 .working {
@@ -106,49 +172,19 @@ footer p{
     align-items: center;
 }
 
-#socials a h3{
-    margin: 0;
-}
-
 #socials a {
     margin: 10px;
-    padding: 5px 20px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
     border: solid 2px #6a1b9a;
-    background-color: #ffff;
-    width: 5rem;
-}
-
-#twitch:hover {
-    box-shadow: 10px 10px 10px #6a1b9a;
-}
-
-#youtube:hover {
-    box-shadow: 10px 10px 10px #f50202;
-}
-
-#tiktok:hover  {
-    box-shadow: 10px 10px 10px #e3dcdc;
-}
-
-#discord:hover  {
-    box-shadow: 10px 10px 10px #0215f5;
-}
-
-#twitter:hover {
-    box-shadow: 10px 10px 10px #000000;
-}
-
-#threads:hover  {
-    box-shadow: 10px 10px 10px #545359;
-}
-
-#instagram:hover  {
-    box-shadow: 10px 10px 10px #ef7c0c;
-}
-
-#socials a {
-    text-decoration: none;
+    background-color: #fff;
     color: #6a1b9a;
+    text-decoration: none;
+}
+
+#socials a:hover {
+    box-shadow: 10px 10px 10px;
 }
 
 #socials a:visited {
@@ -156,6 +192,7 @@ footer p{
 }
 
 #contact {
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;

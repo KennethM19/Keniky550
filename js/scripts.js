@@ -1,12 +1,10 @@
-document.querySelector("form").addEventListener("submit", function (event) {
-    const lastSent = localStorage.getItem("lastSent");
-    const currentDate = new Date().toISOString().split("T")[0]; // Fecha de hoy (AAAA-MM-DD)
+const carousel = document.querySelector('#carousel');
+const items = document.querySelectorAll('.carousel-item');
 
-    if (lastSent === currentDate) {
-        event.preventDefault();
-        alert("Ya has enviado un mensaje hoy. Inténtalo mañana.");
-    } else {
-        localStorage.setItem("lastSent", currentDate);
-        alert("Mensaje enviado con éxito."); // Muestra un mensaje antes de enviar
-    }
+items.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        // Establece la posición como el índice del elemento clicado (+1 porque los índices empiezan en 0)
+        const newPosition = index + 1;
+        carousel.style.setProperty('--position', newPosition);
+    });
 });
