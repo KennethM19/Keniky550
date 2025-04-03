@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    min-height: 100dvh;
+    min-width: fit-content;
     grid-template-rows: auto auto 1fr auto;
     overflow-x: hidden;
 }
@@ -94,7 +94,7 @@ div#carousel {
     overflow: hidden;
     transform-style: preserve-3d;
     perspective: 600px;
-    --items: 5;
+    --items: 6;
     --middle: 3;
     --position: 1;
 }
@@ -137,6 +137,10 @@ div.carousel-item:nth-of-type(4) {
 
 div.carousel-item:nth-of-type(5) {
     --offset: 5;
+}
+
+div.carousel-item:nth-of-type(6) {
+    --offset: 6;
 }
 
 .controls {
@@ -196,4 +200,14 @@ div.carousel-item:nth-of-type(5) {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 250px){
+
 }
